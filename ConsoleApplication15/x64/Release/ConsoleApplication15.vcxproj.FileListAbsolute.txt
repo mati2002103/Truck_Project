@@ -1,1 +1,2 @@
 C:\Users\mateusz\Desktop\prace_domowe_cpp\tydzien_1\ConsoleApplication15\x64\Release\ConsoleApplication15.exe
+C:\Users\Bartek\source\repos\Truck_Project\ConsoleApplication15\x64\Release\ConsoleApplication15.exe
