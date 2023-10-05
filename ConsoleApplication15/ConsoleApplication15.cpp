@@ -45,9 +45,7 @@ int main() {
             // The latter is recommended.
             std::cout << ", name = '" << res->getString("name") << "'" << std::endl;
         }
-        delete stmt;
-        delete con;
-        delete res;
+       
     }
     catch (sql::SQLException& e) {
         std::cerr << "Błąd SQL: " << e.what() << std::endl;
@@ -55,6 +53,8 @@ int main() {
     catch (std::exception& e) {
         std::cerr << "Inny błąd: " << e.what() << std::endl;
     }
-
+    delete stmt;
+    delete con;
+    delete res;
     return 0;
 }
