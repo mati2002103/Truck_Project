@@ -15,7 +15,7 @@ void database::dbconnect()
         driver = sql::mysql::get_mysql_driver_instance();
         con = driver->connect("db4free.net:3306", "orka12", "12345678");
         stmt = con->createStatement();
-        std::cout <<std::endl<< "Ok";
+        std::cout << "Ok";
     }
     catch (sql::SQLException& e) {
         std::cerr << "B³¹d SQL: " << e.what() << std::endl;
@@ -52,5 +52,21 @@ void database::adduser(std::string login, std::string password, int permission)
             std::cerr << "Inny b³¹d: " << e.what() << std::endl;
         }
         
+}
+
+bool database::userexist(std::string login)
+{
+    con->setSchema("truckproject");
+    std::string state = "SELECT * FROM `Users` WHERE `login` = \""+login+"\"";
+    res = stmt->executeQuery(state);
+    // SprawdŸ, czy istnieje rekord
+    if (res->next()) {
+        std::cout << "Rekord istnieje." << std::endl;
+        return true;
+    }
+    else {
+        std::cout << "Rekord nie istnieje." << std::endl;
+        return false;
+    } 
 }
        

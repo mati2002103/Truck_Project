@@ -10,6 +10,7 @@ int main() {
 
     database bazadanych;
     bazadanych.dbconnect();
-    bazadanych.adduser("maciek", "maciek12", 1);
+    bazadanych.userexist("pawel");
+    //bazadanych.adduser("maciek", "maciek12", 1);
     return 0;
 }
