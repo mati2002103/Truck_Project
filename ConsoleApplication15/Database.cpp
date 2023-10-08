@@ -91,6 +91,22 @@ bool database::checkpassword(std::string login, std::string password)
         return false;
     }
 
-    
+
+}
+
+int database::checkrole(std::string login)
+{
+    con->setSchema("truckproject");
+    std::string state = "SELECT `role` FROM `Users` WHERE `login` = \"" + login + "\"";
+    res = stmt->executeQuery(state);
+    int rola = 0;
+    if (res->next()) {
+        rola = res->getInt("role");
+        std::cout << "Numer roli dla loginu " << login << " to: " << rola << std::endl;
+    }
+    else {
+        std::cout << "Login nie istnieje lub nie ma przypisanej roli." << std::endl;
+    }
+    return rola;
 }
 
