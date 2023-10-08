@@ -69,4 +69,28 @@ bool database::userexist(std::string login)
         return false;
     } 
 }
-       
+
+bool database::checkpassword(std::string login, std::string password)
+{
+    if (userexist(login))
+    {
+        std::string state = "SELECT * FROM `Users` WHERE `login` = \"" + login + "\" AND `password` = \""+password+"\"";
+        res = stmt->executeQuery(state);
+        if (res->next()) {
+            std::cout << "Haslo poprawne" << std::endl;
+            return true;
+        }
+        else {
+            std::cout << "Niepoprawne haslo" << std::endl;
+            return false;
+        }
+    }
+    else
+    {
+        std::cout << "Nie ma takiego urzytkownika";
+        return false;
+    }
+
+    
+}
+

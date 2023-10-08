@@ -10,7 +10,7 @@ int main() {
 
     database bazadanych;
     bazadanych.dbconnect();
-    bazadanych.userexist("pawel");
+    bazadanych.checkpassword("maciek", "maciek12");
     //bazadanych.adduser("maciek", "maciek12", 1);
     return 0;
 }
