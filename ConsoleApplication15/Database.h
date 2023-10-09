@@ -1,6 +1,18 @@
+#include <mysql_driver.h>
+#include <mysql_connection.h>
+#include <cppconn/sqlstring.h>
+#include <cppconn/resultset.h>
+#include <cppconn/prepared_statement.h>
 class database
 {
+private:
+	sql::Statement* stmt;
+	sql::ResultSet* res;
+	sql::mysql::MySQL_Driver* driver;
+	sql::Connection* con;
+	
 public :
+	
 	//Laczenie z baza danych
 	void dbconnect();
 	//Dodanie urzytkownika
