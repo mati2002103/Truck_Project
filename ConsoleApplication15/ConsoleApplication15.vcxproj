@@ -132,8 +132,10 @@
   <ItemGroup>
     <ClCompile Include="ConsoleApplication15.cpp" />
     <ClCompile Include="Database.cpp" />
+    <ClCompile Include="Drivers.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Drivers.h" />
     <ClInclude Include="Database.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
