@@ -10,9 +10,13 @@ private:
 	sql::ResultSet* res;
 	sql::mysql::MySQL_Driver* driver;
 	sql::Connection* con;
+	database();
+	
+	
 	
 public :
-	
+	static database instance;
+	static database& get();
 	//Laczenie z baza danych
 	void dbconnect();
 	//Dodanie urzytkownika

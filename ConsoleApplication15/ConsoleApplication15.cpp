@@ -5,13 +5,10 @@
 #include <cppconn/resultset.h>
 #include <cppconn/prepared_statement.h>
 #include "Database.h"
-
 int main() {
-
-    database bazadanych;
-    bazadanych.dbconnect();
-    bazadanych.checkpassword("maciek", "maciek12");
-    bazadanych.checkrole("maciek");
+    database::get().dbconnect();
+    database::get().checkpassword("maciek", "maciek12");
+    database::get().checkrole("maciek");
     //bazadanych.adduser("maciek", "maciek12", 1);
     return 0;
 }

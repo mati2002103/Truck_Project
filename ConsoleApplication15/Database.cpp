@@ -6,6 +6,17 @@
 #include <cppconn/resultset.h>
 #include <cppconn/prepared_statement.h>
 
+database database::instance;
+database::database() 
+{
+    
+}
+database& database::get()
+{
+        return instance;
+}
+
+
 void database::dbconnect()
 {
     try {
@@ -106,4 +117,3 @@ int database::checkrole(std::string login)
     }
     return rola;
 }
-
